@@ -18,12 +18,12 @@
           </v-list-item-content>
         </v-list-item>
 
-        <v-list-item :to="{path: '/articulos'}">
+        <v-list-item :to="{path: '/articles'}">
           <v-list-item-action>
             <v-icon>mdi-{{ icons[1] }}</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title>Artículos</v-list-item-title>
+            <v-list-item-title>Articles</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
 
@@ -70,6 +70,7 @@
             <router-view></router-view>
           </v-fade-transition>
         </v-container>
+        <articles-index></articles-index>
       </v-main>
     </v-card>
   </v-app>
