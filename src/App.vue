@@ -70,7 +70,6 @@
             <router-view></router-view>
           </v-fade-transition>
         </v-container>
-        <articles-index></articles-index>
       </v-main>
     </v-card>
   </v-app>

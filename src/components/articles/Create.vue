@@ -51,6 +51,16 @@
 <script>
 export default {
   name: "ArticlesCreate",
+  data() {
+    return {
+      article: {
+        id: null,
+        description: "",
+        price: 0,
+        stock: 0,
+      },
+    };
+  },
 };
 </script>
 
