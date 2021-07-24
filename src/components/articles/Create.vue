@@ -49,14 +49,15 @@
 </template>
 
 <script>
-// import actions from "../../store";
+const uid = require("uid");
+// import { uid } from "uid";
 
 export default {
   name: "ArticlesCreate",
   data() {
     return {
       article: {
-        id: null,
+        id: uid.uid(), // length = 11 (default)
         description: "",
         price: 0,
         stock: 0,
@@ -66,6 +67,7 @@ export default {
   methods: {
     saveArticle() {
       this.$store.dispatch("ArticlesStore/addArticleAction", this.article);
+      this.$router.push("/articles"); // redirects.
     },
   },
 };

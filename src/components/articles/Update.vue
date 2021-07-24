@@ -2,13 +2,13 @@
   <v-container>
     <v-row class="text-center">
       <v-col cols="12">
-        <h2 class="display-2">Add Article</h2>
+        <h2 class="display-2">Edit Article</h2>
       </v-col>
     </v-row>
 
     <v-row>
       <v-col>
-        <form v-on:submit.prevent="saveArticle()">
+        <form v-on:submit.prevent="save()">
           <v-text-field
             v-model="article.description"
             label="Description"
@@ -51,6 +51,29 @@
 <script>
 export default {
   name: "ArticlesUpdate",
+  data() {
+    return {
+      article: {
+        id: null,
+        description: "",
+        price: 0,
+        stock: 0,
+      },
+    };
+  },
+  mounted() {
+    this.article.id = this.$route.params.id;
+    this.article = this.getArticleFromStore(this.article.id);
+  },
+  methods: {
+    getArticleFromStore(id) {
+      return this.$store.getters["ArticlesStore/getArticle"](id);
+    },
+    save() {
+      this.$store.dispatch("ArticlesStore/updateArticleAction", this.article);
+      this.$router.push("/articles"); // redirects
+    },
+  },
 };
 </script>
 

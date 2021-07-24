@@ -13,7 +13,6 @@ import ArticlesIndex from "./components/articles/Index.vue";
 import ArticlesCreate from "./components/articles/Create.vue";
 import ArticlesUpdate from "./components/articles/Update.vue";
 
-
 // Define routes:
 const routes = [
    {

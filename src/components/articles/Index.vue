@@ -53,6 +53,7 @@
                     fab
                     small
                     color="primary"
+                    :to="{ name: 'editArticle', params: {id: article.id} }"
                   >
                     <v-icon>mdi-pencil</v-icon>
                   </v-btn>
@@ -60,6 +61,8 @@
                     fab
                     small
                     color="error"
+                    @click.stop="dialog = true"
+                    @click=" id = article.id"
                   >
                     <v-icon>mdi-delete</v-icon>
                   </v-btn>
@@ -112,15 +115,28 @@ export default {
   name: "ArticlesIndex",
   data() {
     return {
+      id: null,
       dialog: false,
-      snackbar: null,
-      textsnack: null,
-      articles: [],
+      articles: null,
+      snackbar: false,
+      textsnack: "Record Deleted!",
     };
   },
+  methods: {
+    getArticlesFromStore() {
+      console.log("store:", this.$store);
+      this.articles = this.$store.getters["ArticlesStore/getArticles"]; // because of namespaced: true
+    },
+    confirmDeletion(id) {
+      console.log(id);
+      this.$store.dispatch("ArticlesStore/deleteArticleAction", id);
+      this.dialog = false;
+      this.snackbar = true;
+      this.getArticlesFromStore();
+    },
+  },
   mounted() {
-    console.log(this.$store);
-    this.articles = this.$store.getters["ArticlesStore/getArticles"]; // because of namespaced: true
+    this.getArticlesFromStore();
   },
 };
 </script>
