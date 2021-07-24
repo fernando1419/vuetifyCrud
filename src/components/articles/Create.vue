@@ -49,6 +49,8 @@
 </template>
 
 <script>
+// import actions from "../../store";
+
 export default {
   name: "ArticlesCreate",
   data() {
@@ -60,6 +62,11 @@ export default {
         stock: 0,
       },
     };
+  },
+  methods: {
+    saveArticle() {
+      this.$store.dispatch("ArticlesStore/addArticleAction", this.article);
+    },
   },
 };
 </script>

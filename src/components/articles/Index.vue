@@ -115,17 +115,12 @@ export default {
       dialog: false,
       snackbar: null,
       textsnack: null,
-      articles: [
-        { id: 1, description: "Article 1", price: 10.5, stock: 100 },
-        { id: 2, description: "Article 2", price: 5, stock: 100 },
-        { id: 3, description: "Article 3", price: 77, stock: 100 },
-        { id: 4, description: "Article 4", price: 11, stock: 100 },
-        { id: 5, description: "Article 5", price: 2.5, stock: 100 },
-        { id: 6, description: "Article 6", price: 0.5, stock: 100 },
-        { id: 7, description: "Article 7", price: 5.8, stock: 100 },
-        { id: 8, description: "Article 8", price: 100.5, stock: 100 },
-      ],
+      articles: [],
     };
+  },
+  mounted() {
+    console.log(this.$store);
+    this.articles = this.$store.getters["ArticlesStore/getArticles"]; // because of namespaced: true
   },
 };
 </script>

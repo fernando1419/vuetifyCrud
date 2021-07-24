@@ -5,6 +5,9 @@ import vuetify from './plugins/vuetify'
 import VueRouter from "vue-router";
 Vue.use(VueRouter);
 
+// import the global Store
+import store from "./store";
+
 import Main from "./components/Main.vue";
 import ArticlesIndex from "./components/articles/Index.vue";
 import ArticlesCreate from "./components/articles/Create.vue";
@@ -43,5 +46,6 @@ Vue.config.productionTip = false
 new Vue({
   vuetify,
   router,
+  store,
   render: h => h(App)
 }).$mount('#app')
