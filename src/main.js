@@ -12,6 +12,7 @@ import Main from "./components/Main.vue";
 import ArticlesIndex from "./components/articles/Index.vue";
 import ArticlesCreate from "./components/articles/Create.vue";
 import ArticlesUpdate from "./components/articles/Update.vue";
+import ContactMe from "./components/ContactMe.vue";
 
 // Define routes:
 const routes = [
@@ -32,7 +33,13 @@ const routes = [
       path: '/articles/edit/:id',
       component: ArticlesUpdate,
       name: 'editArticle'
+   },
+   {
+      path: '/contact',
+      component: ContactMe,
+      name: 'contact'
    }
+
 ];
 
 const router = new VueRouter({

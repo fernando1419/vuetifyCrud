@@ -11,15 +11,12 @@
         ></v-img>
       </v-col>
       <v-col class="mb-4">
-        <h1 class="display-2 font-weight-bold mb-3">App SPA</h1>
+        <h1 class="display-1 font-weight-bold mb-3">Articles SPA using Vuetify, Router and Vuex.</h1>
       </v-col>
     </v-row>
 
     <v-row class="text-center">
       <v-col class="mb-4">
-        <h1 class="display-5 font-weight-bold mb-3">App SPA</h1>
-        <h1 class="display-5 font-weight-bold mb-3">Other Title</h1>
-        <h1 class="display-5 font-weight-bold mb-3">New Title</h1>
       </v-col>
     </v-row>
 

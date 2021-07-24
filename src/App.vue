@@ -14,7 +14,7 @@
             <v-icon>mdi-{{ icons[0] }}</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title>Inicio</v-list-item-title>
+            <v-list-item-title>Home</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
 
@@ -27,12 +27,12 @@
           </v-list-item-content>
         </v-list-item>
 
-        <v-list-item :to="{path: '/contacto'}">
+        <v-list-item :to="{path: '/contact'}">
           <v-list-item-action>
             <v-icon>mdi-{{ icons[2] }}</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title>Contacto</v-list-item-title>
+            <v-list-item-title>Contact</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
 
